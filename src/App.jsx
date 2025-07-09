@@ -69,6 +69,22 @@ const misc = [
   "Adrenaline_potion", "Target_Cycle", "Vulnerability_bomb"
 ];
 
+const text = [
+  "Text: P1",
+  "Text: P2",
+  "Text: P3",
+  "Text: P4",
+  "Text: P5",
+  "Text: P6",
+  "Text: 1",
+  "Text: 2",
+  "Text: 3",
+  "Text: 4",
+  "Text: 5",
+  "Text: 6",
+  "Text: Pre",
+  "Text: Enter",
+]
 
 const ABILITY_SECTIONS = {
   Melee: melee,
@@ -77,6 +93,7 @@ const ABILITY_SECTIONS = {
   Necromancy: necromancy,
   Defence: defence,
   Misc: misc,
+  Text: text,
 };
 
 const fuse = new Fuse(Object.values(ABILITY_SECTIONS).flat(), {
