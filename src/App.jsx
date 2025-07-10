@@ -571,37 +571,41 @@ export default function AbilityTimelineEditor() {
       >
         <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   {/* Timeline on far left */}
-                  <SortableContext
+                    <SortableContext
                       items={timeline.map((_, i) => `timeline-${i}`)}
                       strategy={verticalListSortingStrategy}
-                  >
+                    >
                       <div
-                          style={{
-                              display: 'flex',
-                              flexDirection: 'column',
-                              minHeight: 400,
-                              minWidth: 190,
-                              padding: 10,
-                              border: '1px solid #ccc',
-                              borderRadius: 8,
-                              backgroundColor: '#fafafa',
-                          }}
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          height: '80vh',                // Set max height
+                          overflowY: 'auto',             // Enable vertical scrolling
+                          minWidth: 235,
+                          padding: 10,
+                          border: '1px solid #ccc',
+                          borderRadius: 8,
+                          backgroundColor: '#fafafa',
+                        }}
                       >
-                          {[...Array(timeline.length + 1)].map((_, i) => (
-                              <React.Fragment key={i}>
-                                  <DropIndicator id={`timeline-${i}`}/>
-                                  {i < timeline.length && (
-                                      <SortableBlock
-                                          id={timeline[i].id}
-                                          ability={timeline[i].ability}
-                                          blockType={timeline[i].blockType}
-                                          length={timeline[i].length}
-                                      />
-                                  )}
-                              </React.Fragment>
-                          ))}
+                        {[...Array(timeline.length + 1)].map((_, i) => {
+                          const block = timeline[i];
+                          return (
+                            <div key={i} style={{ width: '100%' }}>
+                              <DropIndicator id={`timeline-${i}`} />
+                              {block && (
+                                <SortableBlock
+                                  id={block.id}
+                                  ability={block.ability}
+                                  blockType={block.blockType}
+                                  length={block.length}
+                                />
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
-                  </SortableContext>
+                    </SortableContext>
 
                   {/* Middle section: Import/Export, ticks, trash bin */}
                   <div style={{minWidth: 160}}>
