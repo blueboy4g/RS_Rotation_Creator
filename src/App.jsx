@@ -198,7 +198,7 @@ const misc = [
 ];
 
 const gear = [
-        "Abyssal_Scourge",
+    "Abyssal_Scourge",
     "Bow_of_the_Last_Guardian",
     "Champion's_Ring",
     "Channeller's_Ring",
@@ -223,6 +223,8 @@ const gear = [
     "Dragon_Battleaxe",
     "Dragon_claw",
     "Dragon_claw_In_EOF",
+    "Dragon_Scimitar",
+    "Dragon_Scimitar_In_EOF",
     "Ek-ZekKil",
     "Eldritch_Crossbow",
     "Eldritch_Crossbow_In_EOF",
