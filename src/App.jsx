@@ -562,6 +562,9 @@ export default function AbilityTimelineEditor() {
         return;
       }
 
+      // Legacy remap: old rotations used combat-style names for the basic attacks
+      const legacyNames = { Melee: 'Attack' };
+
       const rebuilt = [];
       let lastTick = 0;
 
@@ -577,7 +580,7 @@ export default function AbilityTimelineEditor() {
         rebuilt.push({
           id: generateId(),
           blockType: 'ability',
-          ability,
+          ability: legacyNames[ability] || ability,
         });
         lastTick = tick;
       });
