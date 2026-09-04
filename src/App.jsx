@@ -20,12 +20,15 @@ import { CSS } from '@dnd-kit/utilities';
 const generateId = () => Math.random().toString(36).substring(2, 9);
 
 const melee = [
+    "Adaptive_Strike",
     "Assault",
+    "Attack",
     "Backhand",
     "Balanced_Strike",
     "Barge",
     "Berserk",
     "Bladed_Dive",
+    "Blood_Burst",
     "Blood_Tendrils",
     "Chaos_Roar",
     "Cleave",
@@ -48,12 +51,13 @@ const melee = [
     "Pulverise",
     "Punish",
     "Quake",
+    "Rend",
     "Sever",
     "Slaughter",
     "Slice",
     "Smash",
     "Stomp",
-];
+    ];
 
 const range = [
     "Binding_Shot",
@@ -64,6 +68,7 @@ const range = [
     "Death's_Swiftness",
     "Demoralise",
     "Fragmentation_Shot",
+    "Galeshot",
     "Greater_Dazing_Shot",
     "Greater_Death's_Swiftness",
     "Greater_Ricochet",
@@ -79,7 +84,7 @@ const range = [
     "Snipe",
     "Tight_Bindings",
     "Unload",
-];
+    ];
 
 const magic = [
     "Animate_Dead",
@@ -105,6 +110,7 @@ const magic = [
     "Magma_Tempest",
     "Metamorphosis",
     "Omnipower",
+    "Runic_Charge",
     "Shock",
     "Smoke_Cloud",
     "Smoke_Tendrils",
@@ -118,7 +124,7 @@ const magic = [
     "Wild_Magic",
     "Wrack",
     "Wrack_and_Ruin",
-];
+    ];
 
 const defence = [
     "Anticipation",
@@ -153,8 +159,14 @@ const necromancy = [
     "Conjure_Skeleton_Warrior",
     "Conjure_Undead_Army",
     "Conjure_Vengeful_Ghost",
+    "Darkness",
     "Death_Skulls",
+    "Death_Spark",
     "Finger_of_Death",
+    "Imbue_Shadows",
+    "Invoke_Death",
+    "Invoke_Lord_of_Bones",
+    "Life_Transfer",
     "Living_Death",
     "Necromancy",
     "Soul_Sap",
@@ -162,18 +174,14 @@ const necromancy = [
     "Spectral_Scythe",
     "Spectral_Scythe_2",
     "Spectral_Scythe_3",
+    "Split_Soul",
+    "Threads_of_Fate",
     "Touch_of_Death",
     "Volley_of_Souls",
-    "Life_Transfer",
-    "Threads_of_Fate",
-    "Invoke_Lord_of_Bones",
-    "Invoke_Death",
-    "Darkness",
-    "Split_Soul",
-    "Death_Spark",
-];
+    ];
 
 const misc = [
+    "Adrenaline_Potion",
     "Adrenaline_potion",
     "Demon_Slayer",
     "Dive",
@@ -181,11 +189,14 @@ const misc = [
     "Eat_Food",
     "Escape",
     "Limitless",
+    "Magic",
+    "Melee",
     "Move",
     "Onslaught",
     "Powerburst_of_vitality",
     "Quiver_ammo_slot_1",
     "Quiver_ammo_slot_2",
+    "Ranged",
     "Reprisal",
     "Sacrifice",
     "Shatter",
@@ -195,10 +206,14 @@ const misc = [
     "Undead_Slayer",
     "Vulnerability_bomb",
     "Weapon_Special_Attack",
-];
+    ];
 
 const gear = [
     "Abyssal_Scourge",
+    "Annihilation",
+    "Annihilation_In_EOF",
+    "Armadyl_Battlestaff",
+    "Armadyl_Battlestaff_In_EOF",
     "Bow_of_the_Last_Guardian",
     "Champion's_Ring",
     "Channeller's_Ring",
@@ -220,9 +235,17 @@ const gear = [
     "Dracolich_Coif",
     "Dracolich_Hauberk",
     "Dracolich_Vambraces",
+    "Dragon_2h_Sword",
+    "Dragon_2h_Sword_In_EOF",
     "Dragon_Battleaxe",
     "Dragon_claw",
     "Dragon_claw_In_EOF",
+    "Dragon_Dagger",
+    "Dragon_Dagger_In_EOF",
+    "Dragon_Halberd",
+    "Dragon_Halberd_In_EOF",
+    "Dragon_Longsword",
+    "Dragon_Longsword_In_EOF",
     "Dragon_Scimitar",
     "Dragon_Scimitar_In_EOF",
     "Ek-ZekKil",
@@ -238,11 +261,18 @@ const gear = [
     "Essence_of_Finality",
     "Flanking",
     "Fractured_Staff_Of_Armadyl",
+    "Gloomfire_bow",
+    "Gloomfire_Bow",
+    "Gloomfire_Bow_In_EOF",
+    "Granite_Maul",
+    "Granite_Maul_In_EOF",
     "Guthix_Staff",
     "Guthix_Staff_In_EOF",
     "Iban's_staff",
     "Iban's_staff_In_EOF",
     "Jaws_of_the_Abyss",
+    "Legatus_Emberstaff",
+    "Legatus_Emberstaff_In_EOF",
     "Masterwork_Spear_of_Annihilation",
     "Noxious_Scythe",
     "Obliteration",
@@ -263,16 +293,24 @@ const gear = [
     "Seren_godbow_In_EOF",
     "Skull_Lantern",
     "Soulbound_Lantern",
+    "Staff_of_Light",
+    "Staff_of_Light_In_EOF",
     "Stalker's_Ring",
+    "Statius_Warhammer",
+    "Statius_Warhammer_In_EOF",
+    "Varanus_Mercy",
+    "Varanus_Mercy_In_EOF",
     "Vestments_Of_Havoc_Boots",
     "Vestments_Of_Havoc_Hood",
     "Vestments_Of_Havoc_Robe_Bottom",
     "Vestments_Of_Havoc_Robe_Top",
     "Zamorak_Bow",
     "Zamorak_Bow_In_EOF",
+    "Zamorak_Staff",
+    "Zamorak_Staff_In_EOF",
     "Zaros_Godsword",
-    "Zorgoth's_Soul_Ring"
-];
+    "Zorgoth's_Soul_Ring",
+    ];
 
 const text = [
   "Text: P1",
